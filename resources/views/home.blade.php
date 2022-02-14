@@ -28,9 +28,10 @@
                     @if (Route::has('login'))
 
                             @auth
-                                <li class="nav-item">
-                                    <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                                </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/dashboard') }}">Student Registration</a>
+                            </li>
+
                             @else
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">Log in</a>
@@ -57,9 +58,8 @@
         @if (Route::has('login'))
 
             @auth
-                <li class="nav-item">
-                    <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                </li>
+
+                <a class="btn btn-outline-secondary" href="{{ url('/dashboard') }}">Student Registration</a>
             @else
                 <a class="btn btn-outline-secondary" href="{{ route('login') }}">Log in</a>
                 @if (Route::has('register'))
