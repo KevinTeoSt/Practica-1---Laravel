@@ -22,7 +22,7 @@
                     <h2>Welcome</h2>
                     <p class="lead">To the registration system, please complete the fields.</p>
                 </div>
-<center>
+
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
                         <div class="col-md-7 col-lg-8">
@@ -76,9 +76,7 @@
 <br>
 
                         </div>
-
                 </form>
-</center>
             </main>
         </div>
 
