@@ -14,15 +14,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </head>
 
-    <body>
-        <div class="container">
-            <main>
-                <div class="py-5 text-center">
-                    <img src="https://sites.google.com/site/umgmba1ciclo2017/_/rsrc/1485460129243/home/umg.png" alt="Logo UMG | Listening lessons, Blackboard learn, Instagram followers" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb" data-noaft="1" style="width: 500px; height: 150px; margin: 0px;">
-                    <h2>Welcome</h2>
-                    <p class="lead">To the registration system, please complete the fields.</p>
-                </div>
+    <body class="bg-light">
+    <div class="container">
+        <main>
+            <div class="text-center ">
+               <img src="https://sites.google.com/site/umgmba1ciclo2017/_/rsrc/1485460129243/home/umg.png" alt="Logo UMG | Listening lessons, Blackboard learn, Instagram followers" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb mt-3" data-noaft="1" style="width: 420px; height: 125px; margin: 0px;">
+                <h2>Welcome</h2>
+                <p class="lead">To the registration system, please complete the fields.</p>
+            </div>
 
+            <div class="row g-5">
+                <div class="col-md-7 col-lg-8">
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
                         <div class="col-md-7 col-lg-8">
@@ -74,11 +76,13 @@
                                 </div>
 <br>
 <br>
-
                         </div>
                 </form>
-            </main>
-        </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
 
     </body>
 </html>

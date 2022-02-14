@@ -61,7 +61,7 @@
                     <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                 </li>
             @else
-                    <a class="btn btn-outline-secondary" href="{{ route('login') }}">Log in</a>
+5260.7                    <a class="btn btn-outline-secondary" href="{{ route('login') }}">Log in</a>
                 @if (Route::has('register'))
 
                 @endif
