@@ -70,6 +70,11 @@
         @endif
     </div>
 </div>
+<div class="card text-center">
 
+    <div class="card-footer text-muted">
+        Kevin Emanuel Esquivel Teo; 0909-18-4551
+    </div>
+</div>
 </body>
 </html>
