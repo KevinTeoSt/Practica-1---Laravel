@@ -73,9 +73,9 @@
 
                     </div>
 
-                <button class="btn-danger mt-3" href="/register">Register</button>
-            </form>
 
+            </form>
+        <a class="btn btn-danger mt-3" href="/register">Register</a>
     </main>
 
 </body>
