@@ -18,12 +18,15 @@ Route::get('/', function () {
     return view('home');
 });
 
+
 Route::resource('alumnos',AlumnosController::class);
 
 
 
-Route::get('/dashboard', function () {
-    return view('alumnos.list');
-})->middleware(['auth'])->name('dashboard');
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/', [AlumnosController::class, 'index'])->name('home');
+});
 
 require __DIR__.'/auth.php';

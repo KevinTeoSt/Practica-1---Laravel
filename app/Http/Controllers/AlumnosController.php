@@ -14,7 +14,8 @@ class AlumnosController extends Controller
      */
     public function index()
     {
-        //
+        $datos['alumnos']=Alumnos::paginate(100);
+        return view('alumnos.list', $datos);
     }
 
     /**
@@ -35,7 +36,16 @@ class AlumnosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datosAlumno = request()->except('_token');
+
+        if($request->hasFile('Foto')){
+            $datosAlumno['Foto']=$request->file('Foto')->store('uploads','public');
+        }
+
+        Alumnos::insert($datosAlumno);
+
+        return redirect('alumnos');
+
     }
 
     /**
@@ -55,10 +65,12 @@ class AlumnosController extends Controller
      * @param  \App\Models\Alumnos  $alumnos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Alumnos $alumnos)
-    {
-        //
-    }
+    public function edit($id)
+    {/*Lo que hacemos es rellenar el formulario con los datos*/
+    $alumnos=Alumnos::findOrFail($id);
+
+    return view('alumnos.edit',compact('alumnos'));
+}
 
     /**
      * Update the specified resource in storage.
@@ -67,9 +79,17 @@ class AlumnosController extends Controller
      * @param  \App\Models\Alumnos  $alumnos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Alumnos $alumnos)
+    public function update(Request $request, $id)
     {
-        //
+        $datosAlumnos = request()->except(['_token','_method']);
+
+        #Buscamos la info con el id que le pasamos y luego actualizamos
+        Alumnos::where('id','=',$id)->update($datosAlumnos);
+
+        #Enotnces volvemos a buscar la info pero esta vez actualizados
+        $alumnos=Alumnos::findOrFail($id);
+
+        return view('alumnos.edit',compact('alumnos'));
     }
 
     /**
@@ -78,8 +98,11 @@ class AlumnosController extends Controller
      * @param  \App\Models\Alumnos  $alumnos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Alumnos $alumnos)
+    public function destroy($id)
     {
-        //
+        Alumnos::destroy($id);
+
+        #Retornamos a la pagina
+        return redirect('alumnos')->with('mensaje', 'Alumno Eliminado Correctamente');
     }
 }

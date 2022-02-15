@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +63,7 @@
                         </label>
                     </div>
                     <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">{{ __('Log in') }}</button>
-                    <div class="flex items-center justify-end mt-4">
+                    <div class="flex items-center justify-end mt-2">
                         @if (Route::has('password.request'))
                             <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                                 {{ __('Forgot your password?') }}
@@ -72,7 +73,7 @@
 
                     </div>
 
-                <a class="mt-5 mb-3 text-muted" href="/">Back</a>
+                <button class="btn-danger mt-3" href="/register">Register</button>
             </form>
 
     </main>
