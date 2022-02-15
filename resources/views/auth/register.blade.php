@@ -16,24 +16,6 @@
 
     <body class="bg-light">
 
-    <header class="">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid ">
-                <a class="navbar-brand" href="#">Laravel Practice No.1</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse " id="navbarScroll">
-                    <ul class="navbar-nav justify-content-end collapse navbar-collapse me-auto my-2 my-lg-0 navbar-nav-scroll" id="navbarScroll">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
     <div class="container">
         <main>
             <div class="text-center ">
@@ -41,13 +23,12 @@
                 <h2>Welcome</h2>
                 <p class="lead">To the registration system, please complete the fields.</p>
             </div>
-
-            <div class="row g-5">
-                <div class="col-md-7 col-lg-8">
+            <center>
+            <div class="">
+                <div class="col-md-7 col-lg-6 ">
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
                         <div class="col-md-7 col-lg-8">
-                            <h4 class="mb-3">User information</h4>
 
                                 <div class="row g-3">
 
@@ -92,6 +73,7 @@
                                     </a>
 
                                     <button class="w-100 btn btn-primary btn-lg" type="submit">{{ __('Register') }}</button>
+                                    <a class=" text-muted" href="/">Back</a>
                                 </div>
 <br>
 <br>
@@ -99,7 +81,9 @@
                 </form>
                 </div>
             </div>
+            </center>
         </main>
+
 
     </div>
 
