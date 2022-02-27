@@ -121,13 +121,13 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                    <!-- <div class="col-12">
                             <label for="Foto" class="form-label" ></label>
                             <input type="file" class="form-control" name="Foto" id="Foto"  >
                             <div class="invalid-feedback">
                                 Your Cel is required.
                             </div>
-                        </div>
+                        </div>-->
 
                         <input href="{{url('alumnos/list')}}" class="btn btn-primary mb-5" type="submit" value="Save">
 

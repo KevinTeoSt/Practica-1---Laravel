@@ -38,9 +38,9 @@ class AlumnosController extends Controller
     {
         $datosAlumno = request()->except('_token');
 
-        if($request->hasFile('Foto')){
+       /* if($request->hasFile('Foto')){
             $datosAlumno['Foto']=$request->file('Foto')->store('uploads','public');
-        }
+        }*/
 
         Alumnos::insert($datosAlumno);
 

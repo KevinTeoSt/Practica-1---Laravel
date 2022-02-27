@@ -61,7 +61,7 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Photo</th>
+            <!--  <th scope="col">Photo</th> -->
                 <th scope="col">First Name</th>
                 <th scope="col">Second Name</th>
                 <th scope="col">Last Name</th>
@@ -80,9 +80,9 @@
             @foreach($alumnos as $alumno)
                 <tr>
                     <td>{{$alumno->id}}</td>
-                    <td>
+                <!-- <td>
                         <img src="{{ asset('storage').'/'.$alumno->Foto}}" alt="" style="width: 125px; height: 135px">
-                    </td>
+                    </td>-->
                     <td>{{$alumno->FirstName}}</td>
                     <td>{{$alumno->SecondName}}</td>
                     <td>{{$alumno->LastName}}</td>

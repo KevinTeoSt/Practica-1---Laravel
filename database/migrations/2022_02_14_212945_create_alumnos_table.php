@@ -22,9 +22,9 @@ class CreateAlumnosTable extends Migration
             $table->string("Address");
             $table->string("Email");
             $table->string("Dpi");
-            $table->integer("Cel");
-            /*Crearé el dato de foto, por si lo llegara a ocupar despues en el curso, pero quedará deshabilidado*/
-            $table->string("Foto");
+            $table->string("Cel");
+            /*Crearé el dato de foto, por si lo llegara a ocupar despues en el curso, pero quedará deshabilidado
+            $table->string("Foto");*/
             $table->timestamps();
         });
     }

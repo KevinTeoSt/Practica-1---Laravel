@@ -121,7 +121,7 @@
                             </div>
                         </div>
 
-
+<!--
                         <div class="col-12">
                             <label for="Foto" class="form-label" ></label>
                             <img src="{{ asset('storage').'/'.$alumnos->Foto}}" alt="" style="width: 125px; height: 135px">
@@ -130,7 +130,7 @@
                                 Your Cel is required.
                             </div>
                         </div>
-
+-->
 
                         <input class="btn btn-primary mb-5" type="submit" value="Save">
 
