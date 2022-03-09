@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
-    <title>Register</title>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+    </script>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- Additional CSS Files -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </head>
-
-<body class="">
+<body>
 
 <header class="">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -40,85 +42,69 @@
         </div>
     </nav>
 </header>
+
 <center>
 
-    <div class="card" style="width: 18rem;">
-
+    <div class="card mt-5"  >
         <div class="card-body">
             <a class="btn btn-success" href="{{url('alumnos/create')}}">Register new student</a>
+            <a class="btn btn-warning" href="{{url('alumnos/create')}}">Registrar Courses and Teachers</a>
         </div>
     </div>
+
 </center>
 
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <!--  <th scope="col">Photo</th> -->
+        <th scope="col">First Name</th>
+        <th scope="col">Second Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Date Of Birth</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+        <th scope="col">DPI</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
 
+    </tr>
+    </thead>
 
-<div class="card">
-    <div class="card-header">
-        Students
-    </div>
-    <div class="card-body me-5">
-        <table class="table mx-3">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-            <!--  <th scope="col">Photo</th> -->
-                <th scope="col">First Name</th>
-                <th scope="col">Second Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Date Of Birth</th>
-                <th scope="col">Address</th>
-                <th scope="col">Email</th>
-                <th scope="col">DPI</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
-
-            </tr>
-            </thead>
-
-            <tbody>
-            @foreach($alumnos as $alumno)
-                <tr>
-                    <td>{{$alumno->id}}</td>
-                <!-- <td>
+    <tbody>
+    @foreach($alumnos as $alumno)
+        <tr>
+            <td>{{$alumno->id}}</td>
+        <!-- <td>
                         <img src="{{ asset('storage').'/'.$alumno->Foto}}" alt="" style="width: 125px; height: 135px">
                     </td>-->
-                    <td>{{$alumno->FirstName}}</td>
-                    <td>{{$alumno->SecondName}}</td>
-                    <td>{{$alumno->LastName}}</td>
-                    <td>{{$alumno->DateOfBirth}}</td>
-                    <td>{{$alumno->Address}}</td>
-                    <td>{{$alumno->Email}}</td>
-                    <td>{{$alumno->Dpi}}</td>
-                    <td>{{$alumno->Cel}}</td>
-                    <td>
+            <td>{{$alumno->FirstName}}</td>
+            <td>{{$alumno->SecondName}}</td>
+            <td>{{$alumno->LastName}}</td>
+            <td>{{$alumno->DateOfBirth}}</td>
+            <td>{{$alumno->Address}}</td>
+            <td>{{$alumno->Email}}</td>
+            <td>{{$alumno->Dpi}}</td>
+            <td>{{$alumno->Cel}}</td>
+            <td>
 
-                        <a class="btn btn-warning" href="{{ url('/alumnos/'.$alumno->id.'/edit') }}">
-                            Correct
-                        </a>
-                    </td>
-                    <td>
-                        <form action="{{ url('/alumnos/'.$alumno->id) }}" method="post">
-                            @csrf
-                            {{method_field('DELETE')}}
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Do you want to delete this Student?')">Delete</button>
+                <a class="btn btn-warning" href="{{ url('/alumnos/'.$alumno->id.'/edit') }}">
+                    Correct
+                </a>
+            </td>
+            <td>
+                <form action="{{ url('/alumnos/'.$alumno->id) }}" method="post">
+                    @csrf
+                    {{method_field('DELETE')}}
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Do you want to delete this Student?')">Delete</button>
 
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-
-        </table>
-
-    </div>
-</div>
-
-
-
+                </form>
+            </td>
+        </tr>
+    @endforeach
+    </tbody>
+</table>
 </body>
 </html>
-
-
-
-

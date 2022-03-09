@@ -14,7 +14,7 @@ class AlumnosController extends Controller
      */
     public function index()
     {
-        $datos['alumnos']=Alumnos::paginate(100);
+        $datos['alumnos']=Alumnos::paginate(1000);
         return view('alumnos.list', $datos);
     }
 
